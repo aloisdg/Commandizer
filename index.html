@@ -1,0 +1,367 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Commander</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 700px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .border-radius-1 {
+            border-radius: 13px;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .golden-border {
+            border: 3px solid gold;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+    </style>
+    <!-- https://codepen.io/aundrekerr/pen/GtLul -->
+    <style>
+        .shiny-div {
+            display: inline-block;
+            position: relative;
+            -webkit-transition: background 0.15s ease-in-out;
+            -moz-transition: background 0.15s ease-in-out;
+            -ms-transition: background 0.15s ease-in-out;
+            -o-transition: background 0.15s ease-in-out;
+            transition: background 0.15s ease-in-out;
+        }
+
+        .shiny-div>i {
+            /* positioning */
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            /* gradient */
+            background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 1%, rgba(255, 255,
+                        255, 0.6) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.85) 71%,
+                    rgba(255, 255, 255, 0) 100%);
+            /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(1%,
+                        rgba(255, 255, 255, 0.03)), color-stop(30%, rgba(255, 255, 255, 0.85)), color-stop(50%, rgba(255, 255, 255,
+                            0.85)), color-stop(70%, rgba(255, 255, 255, 0.85)), color-stop(71%, rgba(255, 255, 255, 0.85)), color-stop(100%,
+                        rgba(255, 255, 255, 0)));
+            /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 1%, rgba(255,
+                        255, 255, 0.6) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.85) 71%,
+                    rgba(255, 255, 255, 0) 100%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 1%, rgba(255, 255,
+                        255, 0.6) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.85) 71%,
+                    rgba(255, 255, 255, 0) 100%);
+            /* Opera 11.10+ */
+            background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 1%, rgba(255, 255,
+                        255, 0.6) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.85) 71%,
+                    rgba(255, 255, 255, 0) 100%);
+            /* IE10+ */
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 1%, rgba(255, 255,
+                        255, 0.6) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.85) 71%,
+                    rgba(255, 255, 255, 0) 100%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff",
+                    endColorstr="#00ffffff", GradientType=1);
+            /* IE6-9 */
+            /* forming the shine element
+        play around with the width, skew and gradient to get different effects
+        */
+            width: 15%;
+            height: 100%;
+            transform: skew(-10deg, 0deg);
+            -webkit-transform: skew(-10deg, 0deg);
+            -moz-transform: skew(-10deg, 0deg);
+            -ms-transform: skew(-10deg, 0deg);
+            -o-transform: skew(-10deg, 0deg);
+            /* animating it */
+            animation: move 2s;
+            animation-iteration-count: infinite;
+            animation-delay: 1s;
+            -webkit-animation: move 2s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-delay: 1s;
+            -moz-transform: skew(-10deg, 0deg);
+            -moz-animation: move 2s;
+            -moz-animation-iteration-count: infinite;
+            -moz-animation-delay: 1s;
+            -ms-transform: skew(-10deg, 0deg);
+            -ms-animation: move 2s;
+            -ms-animation-iteration-count: infinite;
+            -ms-animation-delay: 1s;
+            -o-transform: skew(-10deg, 0deg);
+            -o-animation: move 2s;
+            -o-animation-iteration-count: infinite;
+            -o-animation-delay: 1s;
+        }
+
+        @keyframes move {
+            0% {
+                left: 0;
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 0;
+            }
+
+            48% {
+                opacity: 0.2;
+            }
+
+            80% {
+                opacity: 0;
+            }
+
+            100% {
+                left: 82%;
+            }
+        }
+
+        @-webkit-keyframes move {
+            0% {
+                left: 0;
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 0;
+            }
+
+            48% {
+                opacity: 0.2;
+            }
+
+            80% {
+                opacity: 0;
+            }
+
+            100% {
+                left: 82%;
+            }
+        }
+
+        @-moz-keyframes move {
+            0% {
+                left: 0;
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 0;
+            }
+
+            48% {
+                opacity: 0.2;
+            }
+
+            80% {
+                opacity: 0;
+            }
+
+            100% {
+                left: 88%;
+            }
+        }
+
+        @-ms-keyframes move {
+            0% {
+                left: 0;
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 0;
+            }
+
+            48% {
+                opacity: 0.2;
+            }
+
+            80% {
+                opacity: 0;
+            }
+
+            100% {
+                left: 82%;
+            }
+        }
+
+        @-o-keyframes move {
+            0% {
+                left: 0;
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 0;
+            }
+
+            48% {
+                opacity: 0.2;
+            }
+
+            80% {
+                opacity: 0;
+            }
+
+            100% {
+                left: 82%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>
+        🩰 Random Commander
+    </h1>
+
+    <div class="flex items-center">
+        <label for="price">Set Price Limit:</label><input id="price" name="price" type="number" placeholder="1"
+            value="0" class="reload"><select id="currency" class="reload">
+            <option>eur</option>
+            <option>usd</option>
+        </select>
+    </div>
+
+    <div class="flex items-center">
+        <label for="partner">Include partner:</label><input id="partner" name="partner" type="checkbox" checked=""
+            class="reload">
+    </div>
+
+    <div class="flex items-center">
+        <label for="planeswalker">Include planeswalker:</label><input id="planeswalker" name="planeswalker"
+            type="checkbox" checked="" class="reload">
+    </div>
+
+    <div class="flex items-center">
+        <select id="commanderCount" class="reload">
+            <option value="1">Get 1 commander</option>
+            <option value="2">Get 2 commanders</option>
+            <option value="3">Get 3 commanders</option>
+            <option value="4">Get 4 commanders</option>
+            <option value="5">Get 5 commanders</option>
+            <option value="6">Get 6 commanders</option>
+        </select>
+    </div>
+
+    <div class="flex items-center">
+        <button type="button" id="randomize">Randomize</button>
+    </div>
+
+    <div id="draw" class="flex flex-wrap justify-center">
+
+    </div>
+    <script>
+        const randomCommanderUrl = "https://api.scryfall.com/cards/random?q=f%3Acommander+is%3Acommander"
+
+        const commanderCache = [];
+
+        // We kindly ask that you insert 50 – 100 milliseconds of delay between the requests you send to the server. (i.e., 10 requests per second on average).
+        // https://scryfall.com/docs/api
+        function waitThen(fun) {
+            setTimeout(fun, 100);
+        }
+
+        function AddImage() {
+            const image = document.createElement("img");
+            image.width = 300;
+            image.classList.add("border-radius-1")
+            const i = document.createElement("i");
+            const div = document.createElement("div");
+            div.appendChild(image);
+            div.appendChild(i);
+            draw.appendChild(div);
+            let count = 0;
+            image.onload = () => {
+                if (count == 2) {
+                    image.classList.add("golden-border")
+                    image.parentElement.classList.add("shiny-div");
+                    return;
+                }
+                waitThen(() => {
+                    setSource(image, getUrlFromCache());
+                    count++;
+                })
+            }
+            setSource(image, getUrlFromCache());
+        }
+
+        function setSource(image, url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const png = !data.image_uris && data.card_faces && data.card_faces.length > 0 ?
+                        data.card_faces[0].image_uris.png :
+                        data.image_uris.png;
+                    if (!commanderCache.some(e => e === png)) {
+                        commanderCache.push(png);
+                    }
+                    image.src = png;
+                });
+        }
+
+        function getRandomItem(items) {
+            return items[Math.floor(Math.random() * items.length)];
+        }
+
+        function flipCoin() {
+            return Math.random() < 0.5;
+        }
+
+        function getUrlFromCache() {
+            return (commanderCache.length > (parseInt(commanderCount) + 1) &&
+                flipCoin()) ? getRandomItem(commanderCache) : buildUrl();
+        }
+
+        function buildUrl() {
+            return randomCommanderUrl +
+                (parseInt(price.value) > 0 ? `%20${currency.value}<=${price.value}` : "") +
+                (!partner.checked ? '%20-o:partner' : "") +
+                (!planeswalker.checked ? '%20-t:planeswalker' : "");
+        }
+
+        function init() {
+            draw.innerHTML = '';
+            commanderCache.length = 0;
+            let count = parseInt(commanderCount.value);
+            while (count--) {
+                AddImage()
+            }
+        }
+
+        document.querySelectorAll(".reload").forEach(element => element.onchange = init);
+
+        randomize.onclick = init;
+
+        init();
+    </script>
+</body>
+
+</html>
